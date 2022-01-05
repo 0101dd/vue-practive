@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/gsap.js"></script>
+  <title>Document</title>
+
+  <style>
+    .box {
+      width: 50px;
+      height: 50px;
+      background: rgb(95, 54, 54);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    {{ message }}
+    <div class="box"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    // import { scrollTrigger } from './js/ScrollTrigger.js'
+
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          message: 'hello'
+        }
+      },
+      mounted() {
+        gsap.from('.box', {
+          x: 100,
+          duration: 3
+        })
+      }
+    })
+  </script>
+</body>
+
+</html>
