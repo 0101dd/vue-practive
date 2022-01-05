@@ -1,4 +1,4 @@
-# cligsap
+# cli_gsap
 
 ## Project setup
 ```
