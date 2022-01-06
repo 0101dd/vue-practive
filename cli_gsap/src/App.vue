@@ -1,13 +1,19 @@
 <template>
-  <HelloWorld msg="Hello Vue 3 in CodeSandbox!" />
+<div id="app">
+  <!-- <ScrollTrigger msg="Hello Vue 3 in CodeSandbox!" /> -->
+  <SplitText/>
+</div>
 </template>
 
 <script>
-import HelloWorldVue from './components/HelloWorld.vue'
+// import ScrollTrigger from './components/ScrollTrigger.vue'
+import SplitText from './components/SplitText.vue'
+
 export default {
   name: 'App',
   components: {
-    HelloWorld: HelloWorldVue
+    // ScrollTrigger,
+    SplitText
   }
 }
 </script>
