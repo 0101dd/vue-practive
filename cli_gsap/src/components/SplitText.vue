@@ -15,10 +15,14 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(250, 232, 208);
+  overflow: hidden;
   #target {
     font-size: 1.5rem;
-    font-family: '新細明體';
+    font-family: 'Noto Serif TC', serif;
     line-height: 2.5;
+    span {
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 </style>
@@ -34,6 +38,7 @@ Vue.use(VueSplitCharacters)
 // SplitType.defaults = { absolute: true }
 // console.log('1.', text)
 // console.log('2.', text.chars)
+
 export default {
   mounted () {
     gsap.set('#target span', {
@@ -42,20 +47,19 @@ export default {
     })
     gsap.from('#target span', {
       stagger: {
-        each: 0.1,
-        delay: 0.2,
+        each: 0.05,
+        delay: 0.1,
         repeatDelay: 5,
-        from: 'random',
-        y: 'random(-500, 500)',
-        // y: gsap.utils.random(-500, 500),
-        // z: gsap.utils.random(-500, 500),
-        scale: 0.1
+        from: 'random'
       },
       opacity: 0,
+      x: '+=random(-500,500)',
+      y: '+=random(-500, 500)',
+      z: '+=random(-500, 500)',
       repeat: -1,
-      duration: 3.5
+      duration: 2.5,
+      scale: 'random(-1, 2)'
     })
   }
 }
-
 </script>
