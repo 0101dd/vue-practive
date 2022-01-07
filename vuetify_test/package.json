@@ -1,5 +1,5 @@
 {
-  "name": "cli_gsap",
+  "name": "vuetify_test",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,10 +12,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "gsap": "^3.9.1",
-    "split-type": "^0.2.5",
     "vue": "^2.6.11",
-    "vue-split-characters": "^1.0.0",
+    "vuetify": "^2.4.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
