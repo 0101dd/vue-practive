@@ -1,20 +1,20 @@
 <template>
-<div id="app">
-  <!-- <ScrollTrigger/>
-  <SplitText/> -->
+<v-app>
+  <ScrollTrigger/>
+  <SplitText/>
   <VuetifyButton/>
-</div>
+</v-app>
 </template>
 
 <script>
-// import ScrollTrigger from './components/ScrollTrigger.vue'
-// import SplitText from './components/SplitText.vue'
+import ScrollTrigger from './components/ScrollTrigger.vue'
+import SplitText from './components/SplitText.vue'
 import VuetifyButton from './components/VuetifyButton.vue'
 export default {
   name: 'App',
   components: {
-    // ScrollTrigger,
-    // SplitText,
+    ScrollTrigger,
+    SplitText,
     VuetifyButton
   }
 }
