@@ -3,6 +3,7 @@
   <ScrollTrigger/>
   <SplitText/>
   <VuetifyButton/>
+  <!-- <Taiwan/> -->
 </v-app>
 </template>
 
@@ -10,12 +11,15 @@
 import ScrollTrigger from './components/ScrollTrigger.vue'
 import SplitText from './components/SplitText.vue'
 import VuetifyButton from './components/VuetifyButton.vue'
+// import Taiwan from './components/Taiwan.vue'
+
 export default {
   name: 'App',
   components: {
     ScrollTrigger,
     SplitText,
     VuetifyButton
+    // Taiwan
   }
 }
 </script>
