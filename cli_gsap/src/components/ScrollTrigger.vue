@@ -13,7 +13,7 @@ export default {
         trigger: '.a1',
         start: 'top 60%',
         end: 'bottom 40%',
-        markers: true,
+        // markers: true,
         scrub: 5
       },
       duration: 10,

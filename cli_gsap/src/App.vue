@@ -4,6 +4,7 @@
   <SplitText/>
   <VuetifyButton/>
   <!-- <Taiwan/> -->
+  <Cloud/>
 </v-app>
 </template>
 
@@ -11,6 +12,7 @@
 import ScrollTrigger from './components/ScrollTrigger.vue'
 import SplitText from './components/SplitText.vue'
 import VuetifyButton from './components/VuetifyButton.vue'
+import Cloud from './components/Cloud.vue'
 // import Taiwan from './components/Taiwan.vue'
 
 export default {
@@ -18,7 +20,8 @@ export default {
   components: {
     ScrollTrigger,
     SplitText,
-    VuetifyButton
+    VuetifyButton,
+    Cloud
     // Taiwan
   }
 }
