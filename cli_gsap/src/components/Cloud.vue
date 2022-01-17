@@ -1,12 +1,15 @@
 <template>
+<header>
 <div class="container">
-  <p class="cloud">
+  <div class="cloud">
     書法是書寫文字的方法，一種書寫的藝術。書法縱向穿透兩個層面：「使用」與「審美」；橫向跨越文字兩個層面：「文字」、「繪畫」。書法除了是書法家用以創作的主要表現和作品形式，也是一種研究書寫者心理與性格的工具。各地域依其在地歷史與文化發展出自有的書法特色，而書法至今仍廣泛應用於生活與藝術文化等層面。
-  </p>
-  <p class="cloud2">
+  </div>
+  <div class="cloud2">
     書法是書寫文字的方法，一種書寫的藝術。書法縱向穿透兩個層面：「使用」與「審美」；橫向跨越文字兩個層面：「文字」、「繪畫」。書法除了是書法家用以創作的主要表現和作品形式，也是一種研究書寫者心理與性格的工具。各地域依其在地歷史與文化發展出自有的書法特色，而書法至今仍廣泛應用於生活與藝術文化等層面。
-  </p>
+  </div>
 </div>
+<section></section>
+</header>
 </template>
 
 <script>
@@ -18,27 +21,28 @@ gsap.registerPlugin(ScrollTrigger)
 export default {
   mounted () {
     gsap.from('.cloud', {
-      ScrollTrigger: {
+      scrollTrigger: {
         trigger: '.cloud',
-        start: 'top 60%',
-        end: 'bottom 40%',
-        scrub: 3,
-        markers: true
+        start: 'top center',
+        end: 'bottom center',
+        markers: true,
+        scrub: 2
       },
-      duration: 3,
       opacity: 0,
-      y: '-100px'
+      duration: 1,
+      y: '200px'
     })
     gsap.from('.cloud2', {
-      ScrollTrigger: {
+      scrollTrigger: {
         trigger: '.cloud2',
-        start: 'top 60%',
-        end: 'bottom 40%',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        // markers: true,
         scrub: 3
       },
-      duration: 3,
-      y: '100px',
-      opacity: 0
+      opacity: 0,
+      duration: 1,
+      y: '200px'
     })
   }
 }
@@ -53,5 +57,11 @@ export default {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+section {
+  height: 500px;
+  width: 100%;
+  background: aquamarine;
 }
 </style>

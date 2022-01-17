@@ -1,10 +1,10 @@
 <template>
 <v-app>
-  <ScrollTrigger/>
   <SplitText/>
   <VuetifyButton/>
   <!-- <Taiwan/> -->
   <Cloud/>
+  <ScrollTrigger/>
 </v-app>
 </template>
 
