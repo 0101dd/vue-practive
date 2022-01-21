@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -8,20 +8,43 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: Home
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
+    children: [
+      {
+        path: 'apple',
+        name: 'apple',
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/Apple.vue')
+      },
+      {
+        path: 'banana',
+        name: 'banana',
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/Banana.vue')
+      }
+    ]
+  }//,
+  // {
+  //   path: '/apple',
+  //   name: 'apple',
+  //   component: () => import(/* webpackChunkName: "apple" */ '../views/Apple.vue')
+  // }
 ]
 
 const router = new VueRouter({
   routes
+})
+
+router.afterEach((to) => {
+  document.title = to.meta.title
 })
 
 export default router
