@@ -1,8 +1,8 @@
 <template>
   <div id="Home">
     <h1>HOME</h1>
-    <router-link to="/about">about</router-link>
+    <router-link to="/todo" style="color: white">Todo</router-link>
     <br />
-    <router-link to="/dashboard/apple">dashboard</router-link>
+    <router-link to="/dashboard/apple" style="color: white">dashboard</router-link>
   </div>
 </template>
