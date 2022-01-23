@@ -47,12 +47,26 @@
       ></v-progress-linear>
       </template>
     </v-text-field>
+    <v-text-field
+      v-model="firstname"
+      :rules="nameRules"
+      :counter="20"
+      label="First name"
+      required
+    ></v-text-field>
+    <v-text-field
+      v-model="email"
+      :rules="emailRules"
+      label="email"
+      required
+    ></v-text-field>
     <Comment/>
   </v-container>
   </div>
 </template>
 
 <script>
+import validator from 'validator'
 import Comment from '../components/Comment.vue'
 
 export default {
@@ -69,7 +83,15 @@ export default {
         required: value => !!value || 'Required.',
         min: v => v.length >= 8 || 'Min 8 characters',
         emailMatch: () => ('The email and password you entered don\'t match')
-      }
+      },
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => (v.length >= 4 && v.length <= 20) || 'Name must more than 4 less than 10'
+      ],
+      emailRules: [
+        v => !!v || 'Email is required',
+        v => (validator.isEmail(v)) || 'Email is not correct.'
+      ]
     }
   },
   computed: {
