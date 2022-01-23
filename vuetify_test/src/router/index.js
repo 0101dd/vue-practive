@@ -21,9 +21,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
     children: [
       {
-        path: 'apple',
-        name: 'apple',
-        component: () => import(/* webpackChunkName: "dashboard" */ '../views/Apple.vue')
+        path: 'draggable',
+        name: 'draggable',
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/Draggable.vue')
       },
       {
         path: 'banana',
