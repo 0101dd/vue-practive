@@ -10,11 +10,11 @@
 
 <style>
 .animation-enter-active {
-  animation: cd-sequence 0.8s steps(24);
+  animation: thisOne 1.2s steps(24);
 }
-.animation-leave-active {
+/* .animation-leave-active {
   animation: cd-sequence-reverse 0.8s steps(24);
-}
+} */
 
 .router {
   position: absolute;
@@ -25,6 +25,29 @@
   width: 2500%;
   background: url(./assets/ink.png) no-repeat 0 0;
   background-size: 100% 100%;
+}
+@keyframes thisOne {
+  0% {
+    -webkit-transform: translateY(-50%) translateX(-2%);
+    -moz-transform: translateY(-50%) translateX(-2%);
+    -ms-transform: translateY(-50%) translateX(-2%);
+    -o-transform: translateY(-50%) translateX(-2%);
+    transform: translateY(-50%) translateX(-2%);
+  }
+  50% {
+    -webkit-transform: translateY(-50%) translateX(-98%);
+    -moz-transform: translateY(-50%) translateX(-98%);
+    -ms-transform: translateY(-50%) translateX(-98%);
+    -o-transform: translateY(-50%) translateX(-98%);
+    transform: translateY(-50%) translateX(-98%);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) translateX(-2%);
+    -moz-transform: translateY(-50%) translateX(-2%);
+    -ms-transform: translateY(-50%) translateX(-2%);
+    -o-transform: translateY(-50%) translateX(-2%);
+    transform: translateY(-50%) translateX(-2%);
+  }
 }
 
 @keyframes cd-sequence {
