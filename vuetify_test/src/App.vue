@@ -1,21 +1,65 @@
 <template>
   <v-app id="app">
     <v-main>
-      <router-view></router-view>
+      <transition name="animation">
+      <router-view class="router"></router-view>
+      </transition>
     </v-main>
   </v-app>
 </template>
 
-<script>
-// export default {
-//   data: () => ({
-//     drawer: null,
-//     links: [
-//       ['mdi-inbox-arrow-down', '第一個'],
-//       ['mdi-send', '第二個'],
-//       ['mdi-delete', '第三個'],
-//       ['mdi-alert-octagon', '第四個']
-//     ]
-//   })
-// }
-</script>
+<style>
+.animation-enter-active {
+  animation: cd-sequence 0.8s steps(24);
+}
+.animation-leave-active {
+  animation: cd-sequence-reverse 0.8s steps(24);
+}
+
+.router {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-2%);
+  height: 100%;
+  width: 2500%;
+  background: url(./assets/ink.png) no-repeat 0 0;
+  background-size: 100% 100%;
+}
+
+@keyframes cd-sequence {
+  0% {
+    /* translateX(-2%) is used to horizontally center the first frame inside the viewport */
+    -webkit-transform: translateY(-50%) translateX(-2%);
+    -moz-transform: translateY(-50%) translateX(-2%);
+    -ms-transform: translateY(-50%) translateX(-2%);
+    -o-transform: translateY(-50%) translateX(-2%);
+    transform: translateY(-50%) translateX(-2%);
+  }
+  100% {
+    /* translateX(-98%) (2% + 96) is used to horizontally center the last frame inside the viewport  */
+    -webkit-transform: translateY(-50%) translateX(-98%);
+    -moz-transform: translateY(-50%) translateX(-98%);
+    -ms-transform: translateY(-50%) translateX(-98%);
+    -o-transform: translateY(-50%) translateX(-98%);
+    transform: translateY(-50%) translateX(-98%);
+  }
+}
+
+@keyframes cd-sequence-reverse {
+  0% {
+    -webkit-transform: translateY(-50%) translateX(-98%);
+    -moz-transform: translateY(-50%) translateX(-98%);
+    -ms-transform: translateY(-50%) translateX(-98%);
+    -o-transform: translateY(-50%) translateX(-98%);
+    transform: translateY(-50%) translateX(-98%);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) translateX(-2%);
+    -moz-transform: translateY(-50%) translateX(-2%);
+    -ms-transform: translateY(-50%) translateX(-2%);
+    -o-transform: translateY(-50%) translateX(-2%);
+    transform: translateY(-50%) translateX(-2%);
+  }
+}
+</style>
